@@ -1,11 +1,30 @@
 cmake_minimum_required (VERSION 2.8)
 
+project( AOSL-CPP )
+
 # Dependencies:
+set( CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMake )
+
+set( Boost_USE_STATIC_LIBS        ON )
+set( Boost_USE_MULTITHREADED      ON )
+set( Boost_USE_STATIC_RUNTIME    OFF )
+find_package( Boost COMPONENTS 
+	date_time 
+	filesystem
+	system 
+	chrono
+)
+if( NOT Boost_FOUND )
+	message( SEND_ERROR "AOS Designer requires Boost libraries, NOT FOUND!" )
+endif()
+include_directories( ${Boost_INCLUDE_DIR} )
 
 find_package( XSD )
 if( NOT XSD_FOUND )
-	message( SEND_ERROR "AOS Designer requires XSD library, NOT FOUND!" )
+	message( SEND_ERROR "AOSL-CPP requires XSD library, NOT FOUND!" )
 endif()
+
+
 
 # Important directories :
 set( AOSLCPP_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR} )
@@ -160,10 +179,8 @@ source_group( aoslcpp\\algorithm	FILES ${AOSLCPP_ALGORITHM_ALL_FILES})
 source_group( aoslcpp 				FILES ${AOSLCPP_TOOL_ALL_FILES} 	)
 
 # Make sure required include directories will be available for compilation
-set( AOSLCPP_INCLUDE_DIRS
-	${AOSLCPP_INCLUDE_DIR}
-	${XSD_INCLUDE_DIR} 
-	PARENT_SCOPE
+set( AOSLCPP_INCLUDE_DIRS ${AOSLCPP_INCLUDE_DIR} ${XSD_INCLUDE_DIR} 
+	CACHE STRING "Directories to include in projects using AOSL-CPP" FORCE
 )
 
 include_directories( 
