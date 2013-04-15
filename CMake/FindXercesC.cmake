@@ -57,7 +57,7 @@ endif()
 
 # Find the library
 if( XERCESC_BITS_MODE EQUAL 64 )
-	set( XERCESC_WINDOWS_INSTALL_PATHS
+	set( XERCESC_WINDOWS_LIBRARY_INSTALL_PATHS
 		${XERCESC_ROOT_DIR}/lib64
 		${XERCESC_ROOT_DIR}/lib64/${XERCESC_COMPILER_PREFIX}
 	)
@@ -71,7 +71,7 @@ endif()
 FIND_LIBRARY(XERCESC_LIBRARY
    NAMES xerces-c xerces-c_3
    PATHS 
-    ${XERCESC_WINDOWS_INSTALL_PATHS}
+    ${XERCESC_WINDOWS_LIBRARY_INSTALL_PATHS}
     /usr/lib 
     /usr/local/lib
    DOC "The name of the xerces-c library"
