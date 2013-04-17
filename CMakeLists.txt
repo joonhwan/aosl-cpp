@@ -85,10 +85,10 @@ set( AOSLCPP_ALGORITHM_HEADERS
 set( AOSLCPP_TOOL_HEADERS
 	${AOSLCPP_HEADERS_DIR}/common.hpp
 	
-	${AOSLCPP_HEADERS_DIR}/SequenceInterpreter.hpp
-	${AOSLCPP_HEADERS_DIR}/StoryPath.hpp
-	${AOSLCPP_HEADERS_DIR}/CanvasState.hpp
-	${AOSLCPP_HEADERS_DIR}/NavigationState.hpp
+	${AOSLCPP_HEADERS_DIR}/sequenceInterpreter.hpp
+	${AOSLCPP_HEADERS_DIR}/storyPath.hpp
+	${AOSLCPP_HEADERS_DIR}/canvasState.hpp
+	${AOSLCPP_HEADERS_DIR}/navigationState.hpp
 	
 )
 
@@ -113,10 +113,10 @@ set( AOSLCPP_ALGORITHM_SOURCES
 set( AOSLCPP_TOOL_SOURCES
 	${AOSLCPP_SOURCE_DIR}/common.cpp
 
-	${AOSLCPP_SOURCE_DIR}/SequenceInterpreter.cpp
-	${AOSLCPP_SOURCE_DIR}/StoryPath.cpp
-	${AOSLCPP_SOURCE_DIR}/CanvasState.cpp
-	${AOSLCPP_SOURCE_DIR}/NavigationState.cpp
+	${AOSLCPP_SOURCE_DIR}/sequenceInterpreter.cpp
+	${AOSLCPP_SOURCE_DIR}/storyPath.cpp
+	${AOSLCPP_SOURCE_DIR}/canvasState.cpp
+	${AOSLCPP_SOURCE_DIR}/navigationState.cpp
 	
 )
 

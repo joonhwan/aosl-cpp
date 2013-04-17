@@ -1,4 +1,4 @@
-#include "aoslcpp/NavigationState.hpp"
+#include "aoslcpp/navigationstate.hpp"
 
 #include <algorithm>
 

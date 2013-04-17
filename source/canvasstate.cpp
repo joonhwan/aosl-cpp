@@ -1,4 +1,4 @@
-#include "aoslcpp/CanvasState.hpp"
+#include "aoslcpp/canvasstate.hpp"
 
 #include "aoslcpp/algorithm/execution.hpp"
 

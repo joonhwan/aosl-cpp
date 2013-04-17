@@ -1,4 +1,4 @@
-#include "aoslcpp/SequenceInterpreter.hpp"
+#include "aoslcpp/sequenceinterpreter.hpp"
 
 #include <algorithm>
 

@@ -1,4 +1,4 @@
-#include "aoslcpp/StoryPath.hpp"
+#include "aoslcpp/storypath.hpp"
 
 #include "utilcpp/Assert.hpp"
 

@@ -6,9 +6,9 @@
 #include <boost/optional.hpp>
 
 #include "aosl/story.hpp"
-#include "aoslcpp/StoryPath.hpp"
-#include "aoslcpp/CanvasState.hpp"
-#include "aoslcpp/NavigationState.hpp"
+#include "aoslcpp/storypath.hpp"
+#include "aoslcpp/canvasstate.hpp"
+#include "aoslcpp/navigationstate.hpp"
 
 namespace aosl
 {
