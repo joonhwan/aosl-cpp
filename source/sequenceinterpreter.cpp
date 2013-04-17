@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "utilcpp/Assert.hpp"
+#include "utilcpp/assert.hpp"
 
 #include "aoslcpp/algorithm/find.hpp"
 #include "aoslcpp/algorithm//execution.hpp"

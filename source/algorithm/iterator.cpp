@@ -5,7 +5,7 @@
 #include "aosl/object.hpp"
 #include "aosl/canvas.hpp"
 
-#include "utilcpp/Assert.hpp"
+#include "utilcpp/assert.hpp"
 
 namespace aoslcpp
 {

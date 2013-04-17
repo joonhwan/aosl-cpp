@@ -1,6 +1,6 @@
 #include "aoslcpp/storypath.hpp"
 
-#include "utilcpp/Assert.hpp"
+#include "utilcpp/assert.hpp"
 
 namespace aoslcpp
 {
