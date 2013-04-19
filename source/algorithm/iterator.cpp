@@ -64,11 +64,10 @@ namespace aoslcpp
 
 	void objects_iterator_depth::add_nodes( const aosl::Object_list& objects, const aosl::Object* parent, size_t depth )
 	{
-		if( objects.object().empty() )
-			return; // be lazy!
-
+		const auto& object_list = objects.object();
+		
 		size_t idx = 0;
-		std::for_each( objects.object().begin(), objects.object().end(), [&]( const aosl::Object& object )
+		for( const auto& object : object_list )
 		{
 			add_node( ObjectTreeNodeInfos( &object, parent, depth, idx ) );
 
@@ -76,7 +75,7 @@ namespace aoslcpp
 				add_nodes( *object.children(), &object, depth + 1 );
 
 			++idx;
-		});
+		};
 	}
 
 	objects_iterator_depth::objects_iterator_depth( const aosl::Object& object )
@@ -93,16 +92,16 @@ namespace aoslcpp
 
 	void objects_iterator_breadth::build( const aosl::Object_list& root_objects )
 	{
-		NodePath path;
 		std::vector< Object_Parent > root_object_infos;
+		const auto& root_object_list = root_objects.object();
 
-		std::for_each( root_objects.object().begin(), root_objects.object().end(), [&]( const aosl::Object& root_object )
+		for( const auto& root_object : root_object_list )
 		{
 			Object_Parent infos;
 			infos.object = &root_object;
 			infos.parent = nullptr;
 			root_object_infos.push_back( infos );
-		});
+		};
 
 		add_nodes( root_object_infos, 0 );
 
@@ -124,14 +123,14 @@ namespace aoslcpp
 			if( infos.object->children() ) // collect all the children at the same next depth level
 			{
 				const auto& children = infos.object->children()->object();
-				std::for_each( children.begin(), children.end(), [&]( const aosl::Object& child_object )
+				for( const auto& child_object : children )
 				{
 					Object_Parent child_infos;
 					child_infos.object = &child_object;
 					child_infos.parent = infos.object;
 					child_objects.push_back( child_infos );
 
-				});
+				};
 			}
 
 		}

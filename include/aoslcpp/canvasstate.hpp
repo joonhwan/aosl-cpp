@@ -21,11 +21,11 @@ namespace aoslcpp
 
 		explicit CanvasState( const aosl::Canvas& canvas );
 
-		void activate( const aosl::Object_ref object_ref );
-		void deactivate( const aosl::Object_ref object_ref );
-		void switch_state( const aosl::Object_ref object_ref );
+		void activate( const aosl::Object_ref& object_ref );
+		void deactivate( const aosl::Object_ref& object_ref );
+		void switch_state( const aosl::Object_ref& object_ref );
 
-		void transform( const aosl::Object_ref object_ref, const aosl::Transformation& transformation );
+		void transform( const aosl::Object_ref& object_ref, const aosl::Transformation& transformation );
 
 		void execute( const aosl::Change& change, bool reverse = false );
 		void execute( const aosl::Move& move, bool reverse = false );

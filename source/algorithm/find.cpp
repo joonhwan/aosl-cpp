@@ -9,7 +9,7 @@ namespace aoslcpp
 		// note: those implementations are made template to allow easy generation of const and non-const versions.
 
 		template< class ObjectType, class ObjectList >
-		ObjectType* recursive_find_object( ObjectList& list_objects, const aosl::Object_ref object_ref ) 
+		ObjectType* recursive_find_object( ObjectList& list_objects, const aosl::Object_ref& object_ref ) 
 		{
 			auto& objects = list_objects.object();
 
@@ -33,26 +33,26 @@ namespace aoslcpp
 
 
 		template< class ObjectType, class CanvasType >
-		ObjectType* find_object( CanvasType& canvas, const aosl::Object_ref object_ref )
+		ObjectType* find_object( CanvasType& canvas, const aosl::Object_ref& object_ref )
 		{
 			return recursive_find_object<ObjectType>( canvas.objects(), object_ref );
 		}
 
 		template< class ObjectType >
-		ObjectType* find_object( ObjectType& parent, const aosl::Object_ref object_ref )
+		ObjectType* find_object( ObjectType& parent, const aosl::Object_ref& object_ref )
 		{
 			return parent.children() ? recursive_find_object<ObjectType>( *parent.children(), object_ref ) : nullptr;
 		}
 		
 		template< class MoveType, class StoryType >
-		MoveType* find_move( StoryType& story, const aosl::Move_ref move_ref )
+		MoveType* find_move( StoryType& story, const aosl::Move_ref& move_ref )
 		{
 			auto& moves = story.moves().move();
 
 			if( moves.empty() ) // be lazy!
 				return nullptr;
 
-			auto find_it = std::find_if( moves.begin(), moves.end(), [&]( MoveType& move ){ return move.id() == move_ref; });
+			auto find_it = std::find_if( moves.begin(), moves.end(), [&]( const MoveType& move ){ return move.id() == move_ref; });
 
 			if( find_it != moves.end() )
 			{
@@ -64,14 +64,14 @@ namespace aoslcpp
 		}
 
 		template< class StageType, class StoryType >
-		StageType* find_stage( StoryType& story, const aosl::Stage_ref stage_ref )
+		StageType* find_stage( StoryType& story, const aosl::Stage_ref& stage_ref )
 		{
 			auto& stages = story.stages().stage();
 
 			if( stages.empty() )
 				return nullptr;
 
-			auto find_it = std::find_if( stages.begin(), stages.end(), [&]( StageType& stage ){ return stage.id() == stage_ref; });
+			auto find_it = std::find_if( stages.begin(), stages.end(), [&]( const StageType& stage ){ return stage.id() == stage_ref; });
 
 			if( find_it != stages.end() )
 			{
@@ -85,43 +85,43 @@ namespace aoslcpp
 	}
 	
 
-	const aosl::Object* find_object( const aosl::Canvas& canvas, const aosl::Object_ref object_ref )
+	const aosl::Object* find_object( const aosl::Canvas& canvas, const aosl::Object_ref& object_ref )
 	{
 		return impl::find_object<const aosl::Object>( canvas, object_ref );
 	}
 	
-	aosl::Object* find_object( aosl::Canvas& canvas, const aosl::Object_ref object_ref )
+	aosl::Object* find_object( aosl::Canvas& canvas, const aosl::Object_ref& object_ref )
 	{
 		return impl::find_object<aosl::Object>( canvas, object_ref );
 	}
 
 	
-	const aosl::Object* find_object( const aosl::Object& parent, const aosl::Object_ref object_ref )
+	const aosl::Object* find_object( const aosl::Object& parent, const aosl::Object_ref& object_ref )
 	{
 		return impl::find_object( parent, object_ref );
 	}
 
-	aosl::Object* find_object( aosl::Object& parent, const aosl::Object_ref object_ref )
+	aosl::Object* find_object( aosl::Object& parent, const aosl::Object_ref& object_ref )
 	{
 		return impl::find_object( parent, object_ref );
 	}
 	
-	const aosl::Move* find_move( const aosl::Story& story, const aosl::Move_ref move_ref )
+	const aosl::Move* find_move( const aosl::Story& story, const aosl::Move_ref& move_ref )
 	{
 		return impl::find_move<const aosl::Move>( story, move_ref );
 	}
 
-	aosl::Move* find_move( aosl::Story& story, const aosl::Move_ref move_ref )
+	aosl::Move* find_move( aosl::Story& story, const aosl::Move_ref& move_ref )
 	{
 		return impl::find_move<aosl::Move>( story, move_ref );
 	}
 
-	const aosl::Stage* find_stage( const aosl::Story& story, const aosl::Stage_ref stage_ref )
+	const aosl::Stage* find_stage( const aosl::Story& story, const aosl::Stage_ref& stage_ref )
 	{
 		return impl::find_stage<const aosl::Stage>( story, stage_ref );
 	}
 	
-	aosl::Stage* find_stage( aosl::Story& story, const aosl::Stage_ref stage_ref )
+	aosl::Stage* find_stage( aosl::Story& story, const aosl::Stage_ref& stage_ref )
 	{
 		return impl::find_stage<aosl::Stage>( story, stage_ref );
 	}

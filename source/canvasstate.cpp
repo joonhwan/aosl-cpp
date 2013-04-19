@@ -13,22 +13,22 @@ namespace aoslcpp
 	{
 	}
 	
-	void CanvasState::activate( const aosl::Object_ref object_ref )
+	void CanvasState::activate( const aosl::Object_ref& object_ref )
 	{
 		aoslcpp::activate( m_canvas, object_ref );
 	}
 
-	void CanvasState::deactivate( const aosl::Object_ref object_ref )
+	void CanvasState::deactivate( const aosl::Object_ref& object_ref )
 	{
 		aoslcpp::deactivate( m_canvas, object_ref );
 	}
 
-	void CanvasState::switch_state( const aosl::Object_ref object_ref )
+	void CanvasState::switch_state( const aosl::Object_ref& object_ref )
 	{
 		aoslcpp::switch_state( m_canvas, object_ref );
 	}
 
-	void CanvasState::transform( const aosl::Object_ref object_ref, const aosl::Transformation& transformation )
+	void CanvasState::transform( const aosl::Object_ref& object_ref, const aosl::Transformation& transformation )
 	{
 		aoslcpp::transform( m_canvas, object_ref, transformation );
 	}

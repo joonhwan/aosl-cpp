@@ -25,7 +25,8 @@ namespace aoslcpp
 
 	void StoryPath::for_each_step( std::function< void ( const Step& ) > f ) const
 	{
-		std::for_each( m_steps.begin(), m_steps.end(), f );
+		for( const auto& step : m_steps )
+			f( step );
 	}
 
 }

@@ -22,10 +22,10 @@ namespace aoslcpp
 
 		const auto& stage_events = stage_navigation.event();
 
-		std::for_each( stage_events.begin(), stage_events.end(), [&]( const aosl::Event& event )
+		for( const auto& event : stage_events )
 		{
 			m_current_navigation.event().push_back( event );
-		});
+		};
 		
 
 	}
