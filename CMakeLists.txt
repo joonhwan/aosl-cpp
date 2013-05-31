@@ -1,32 +1,21 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required ( VERSION 2.8 )
+
 
 project( AOSL-CPP )
 
 # Dependencies:
-set( CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMake )
 
-if( WIN32 ) 
-	# On Windows: check that the right boost binaries are set before continuing
-	if( NOT DEFINED BOOST_LIBRARYDIR OR BOOST_LIBRARYDIR STREQUAL "BOOST_LIBRARYDIR-NOT-SET" )
-		set( BOOST_LIBRARYDIR "BOOST_LIBRARYDIR-NOT-SET" CACHE PATH "Location of the Boost library binaries" FORCE )
-		message( FATAL_ERROR "BOOST_LIBRARYDIR is not set. Before continuing, please set it to the correct binary path (depending on if you want to link with 32 or 64bit version)." )
-	endif()
-	
-endif()
+set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${UTILCPP_CMAKE_DIR} )
+include( utilcpp_projects )
 
-set( Boost_USE_STATIC_LIBS        ON )
-set( Boost_USE_MULTITHREADED      ON )
-set( Boost_USE_STATIC_RUNTIME    OFF )
-find_package( Boost COMPONENTS 
+set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/CMake )
+
+UTILCPP_USE_BOOST(
 	date_time 
 	filesystem
 	system 
 	chrono
 )
-if( NOT Boost_FOUND )
-	message( SEND_ERROR "AOS Designer requires Boost libraries, NOT FOUND!" )
-endif()
-include_directories( ${Boost_INCLUDE_DIR} )
 
 find_package( XSD )
 if( NOT XSD_FOUND )
@@ -192,16 +181,17 @@ set( AOSLCPP_INCLUDE_DIRS ${AOSLCPP_INCLUDE_DIR} ${XSD_INCLUDE_DIR}
 	CACHE STRING "Directories to include in projects using AOSL-CPP" FORCE
 )
 
-include_directories( 
-	${AOSLCPP_INCLUDE_DIR}
-	${XSD_INCLUDE_DIR} 
-	${UTILCPP_INCLUDE_DIR}
+UTILCPP_MAKE_LIBRARY( aoslcpp STATIC
+	SOURCES 
+		${AOSLCPP_SOURCES}
+		${AOSLCPP_HEADERS}
+	LINK_TARGETS
+		${XERCESC_LIBRARY}
+	INCLUDE_DIRS 
+		${AOSLCPP_INCLUDE_DIR}
+		${XSD_INCLUDE_DIR}
 )
 
-
-# Generate the library
-add_library( aoslcpp STATIC ${AOSLCPP_SOURCES} ${AOSLCPP_HEADERS} )
-target_link_libraries( aoslcpp ${XERCESC_LIBRARY} utilcpp )
 
 # Add the test projects
 add_subdirectory( ./test )
