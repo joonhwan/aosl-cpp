@@ -193,5 +193,8 @@ UTILCPP_MAKE_LIBRARY( aoslcpp STATIC
 )
 
 
-# Add the test projects
-add_subdirectory( ./test )
+# Add the test projects if wanted
+option( AOSLCPP_ENABLE_TESTS "Enable generating test projects for this project." OFF )
+if( AOSLCPP_ENABLE_TESTS )
+	add_subdirectory( test )
+endif()
