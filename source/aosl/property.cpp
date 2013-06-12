@@ -44,6 +44,14 @@ namespace aosl
   //
 
   Property::
+  Property ()
+  : ::xml_schema::Type (),
+    property1_ (::xml_schema::Flags (), this),
+    name_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Property::
   Property (const NameType& name)
   : ::xml_schema::Type (),
     property1_ (::xml_schema::Flags (), this),

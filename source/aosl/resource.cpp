@@ -44,6 +44,14 @@ namespace aosl
   //
 
   Resource::
+  Resource ()
+  : ::aosl::Source_uri (),
+    id_ (::xml_schema::Flags (), this),
+    type_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Resource::
   Resource (const ::xml_schema::Uri& _xsd_Uri_base,
             const IdType& id,
             const TypeType& type)

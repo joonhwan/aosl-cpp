@@ -47,6 +47,16 @@ namespace aosl
     "black");
 
   Canvas::
+  Canvas ()
+  : ::xml_schema::Type (),
+    area_ (::xml_schema::Flags (), this),
+    layers_ (::xml_schema::Flags (), this),
+    objects_ (::xml_schema::Flags (), this),
+    color_ (color_default_value (), ::xml_schema::Flags (), this)
+  {
+  }
+
+  Canvas::
   Canvas (const AreaType& area,
           const ObjectsType& objects)
   : ::xml_schema::Type (),

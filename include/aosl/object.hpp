@@ -475,17 +475,6 @@ namespace aosl
     void
     id (::std::auto_ptr< IdType > p);
 
-    /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< IdType >
-    detach_id ();
-
     //@}
 
     /**
@@ -630,6 +619,14 @@ namespace aosl
      * @name Constructors
      */
     //@{
+
+    /**
+     * @brief Default constructor.
+     *
+     * Note that this constructor leaves required elements and
+     * attributes uninitialized.
+     */
+    Object ();
 
     /**
      * @brief Create an instance from the ultimate base and

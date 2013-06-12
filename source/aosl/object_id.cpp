@@ -44,6 +44,12 @@ namespace aosl
   //
 
   Object_id::
+  Object_id ()
+  : ::aosl::Unique_id ()
+  {
+  }
+
+  Object_id::
   Object_id (const ::xml_schema::Id& _xsd_Id_base)
   : ::aosl::Unique_id (_xsd_Id_base)
   {

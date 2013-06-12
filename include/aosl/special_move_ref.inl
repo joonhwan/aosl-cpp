@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Special_move_ref::
+  Special_move_ref ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Special_move_ref::
   Special_move_ref (Value v)
   : ::xml_schema::String (_xsd_Special_move_ref_literals_[v])
   {

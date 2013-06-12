@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Layer_ref::
+  Layer_ref ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Layer_ref::
   Layer_ref (const char* s)
   : ::xml_schema::String (s)
   {

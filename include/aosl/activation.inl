@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Activation::
+  Activation ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Activation::
   Activation (Value v)
   : ::xml_schema::String (_xsd_Activation_literals_[v])
   {

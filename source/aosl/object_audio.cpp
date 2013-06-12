@@ -44,6 +44,13 @@ namespace aosl
   //
 
   Object_audio::
+  Object_audio ()
+  : ::aosl::Object (),
+    stream_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Object_audio::
   Object_audio (const IdType& id)
   : ::aosl::Object (id),
     stream_ (::xml_schema::Flags (), this)

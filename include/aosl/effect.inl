@@ -70,13 +70,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Effect::TypeType > Effect::
-  detach_type ()
-  {
-    return this->type_.detach ();
-  }
-
-  inline
   const ::xercesc::DOMDocument& Effect::
   dom_document () const
   {

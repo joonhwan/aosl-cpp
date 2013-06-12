@@ -44,6 +44,15 @@ namespace aosl
   //
 
   Effect::
+  Effect ()
+  : ::xml_schema::Type (),
+    dom_document_ (::xsd::cxx::xml::dom::create_document< char > ()),
+    any_ (this->dom_document ()),
+    type_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Effect::
   Effect (const TypeType& type)
   : ::xml_schema::Type (),
     dom_document_ (::xsd::cxx::xml::dom::create_document< char > ()),

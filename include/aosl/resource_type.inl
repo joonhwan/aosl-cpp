@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Resource_type::
+  Resource_type ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Resource_type::
   Resource_type (const char* s)
   : ::xml_schema::String (s)
   {

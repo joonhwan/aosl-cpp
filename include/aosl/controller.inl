@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Controller::
+  Controller ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Controller::
   Controller (Value v)
   : ::xml_schema::String (_xsd_Controller_literals_[v])
   {

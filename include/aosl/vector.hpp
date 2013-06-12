@@ -133,17 +133,6 @@ namespace aosl
     x (::std::auto_ptr< XType > p);
 
     /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< XType >
-    detach_x ();
-
-    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -210,17 +199,6 @@ namespace aosl
     y (::std::auto_ptr< YType > p);
 
     /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< YType >
-    detach_y ();
-
-    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -285,17 +263,6 @@ namespace aosl
      */
     void
     z (::std::auto_ptr< ZType > p);
-
-    /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< ZType >
-    detach_z ();
 
     /**
      * @brief Return the default value for the attribute.

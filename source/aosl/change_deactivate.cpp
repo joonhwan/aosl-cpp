@@ -44,6 +44,12 @@ namespace aosl
   //
 
   Change_deactivate::
+  Change_deactivate ()
+  : ::aosl::Change ()
+  {
+  }
+
+  Change_deactivate::
   Change_deactivate (const ObjectType& object)
   : ::aosl::Change (object)
   {

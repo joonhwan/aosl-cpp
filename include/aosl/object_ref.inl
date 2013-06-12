@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Object_ref::
+  Object_ref ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Object_ref::
   Object_ref (const char* s)
   : ::xml_schema::String (s)
   {

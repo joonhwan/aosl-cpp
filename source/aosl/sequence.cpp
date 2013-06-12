@@ -44,6 +44,18 @@ namespace aosl
   //
 
   Sequence::
+  Sequence ()
+  : ::xml_schema::Type (),
+    meta_ (::xml_schema::Flags (), this),
+    library_ (::xml_schema::Flags (), this),
+    canvas_ (::xml_schema::Flags (), this),
+    story_ (::xml_schema::Flags (), this),
+    name_ (::xml_schema::Flags (), this),
+    id_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Sequence::
   Sequence (const LibraryType& library,
             const CanvasType& canvas,
             const StoryType& story,

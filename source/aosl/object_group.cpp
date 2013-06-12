@@ -44,6 +44,12 @@ namespace aosl
   //
 
   Object_group::
+  Object_group ()
+  : ::aosl::Object ()
+  {
+  }
+
+  Object_group::
   Object_group (const IdType& id)
   : ::aosl::Object (id)
   {

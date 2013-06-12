@@ -44,6 +44,14 @@ namespace aosl
   //
 
   Change_transform::
+  Change_transform ()
+  : ::aosl::Change (),
+    relative_ (::xml_schema::Flags (), this),
+    absolute_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Change_transform::
   Change_transform (const ObjectType& object)
   : ::aosl::Change (object),
     relative_ (::xml_schema::Flags (), this),

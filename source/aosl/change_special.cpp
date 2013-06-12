@@ -44,6 +44,13 @@ namespace aosl
   //
 
   Change_special::
+  Change_special ()
+  : ::aosl::Change (),
+    type_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Change_special::
   Change_special (const ObjectType& object,
                   const TypeType& type)
   : ::aosl::Change (object),

@@ -44,6 +44,12 @@ namespace aosl
   //
 
   Source_uri::
+  Source_uri ()
+  : ::xml_schema::Uri ()
+  {
+  }
+
+  Source_uri::
   Source_uri (const ::xml_schema::Uri& _xsd_Uri_base)
   : ::xml_schema::Uri (_xsd_Uri_base)
   {

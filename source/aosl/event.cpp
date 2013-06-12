@@ -44,6 +44,13 @@ namespace aosl
   //
 
   Event::
+  Event ()
+  : ::xml_schema::Type (),
+    move_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Event::
   Event (const MoveType& move)
   : ::xml_schema::Type (),
     move_ (move, ::xml_schema::Flags (), this)

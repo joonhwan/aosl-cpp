@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Move_ref::
+  Move_ref ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Move_ref::
   Move_ref (const char* s)
   : ::xml_schema::String (s)
   {

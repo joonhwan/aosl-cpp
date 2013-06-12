@@ -44,6 +44,13 @@ namespace aosl
   //
 
   Object_ref_element::
+  Object_ref_element ()
+  : ::xml_schema::Type (),
+    id_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Object_ref_element::
   Object_ref_element (const IdType& id)
   : ::xml_schema::Type (),
     id_ (id, ::xml_schema::Flags (), this)

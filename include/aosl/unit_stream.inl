@@ -22,6 +22,13 @@ namespace aosl
 
   inline
   Unit_stream::
+  Unit_stream ()
+  : ::xml_schema::String ()
+  {
+  }
+
+  inline
+  Unit_stream::
   Unit_stream (const char* s)
   : ::xml_schema::String (s)
   {

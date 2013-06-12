@@ -44,6 +44,13 @@ namespace aosl
   //
 
   Object_sprite::
+  Object_sprite ()
+  : ::aosl::Object (),
+    graphic_ (::xml_schema::Flags (), this)
+  {
+  }
+
+  Object_sprite::
   Object_sprite (const IdType& id)
   : ::aosl::Object (id),
     graphic_ (::xml_schema::Flags (), this)

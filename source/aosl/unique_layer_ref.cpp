@@ -44,6 +44,12 @@ namespace aosl
   //
 
   Unique_layer_ref::
+  Unique_layer_ref ()
+  : ::aosl::Unique_ref ()
+  {
+  }
+
+  Unique_layer_ref::
   Unique_layer_ref (const ::xml_schema::Idref& _xsd_Idref_base)
   : ::aosl::Unique_ref (_xsd_Idref_base)
   {

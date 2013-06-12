@@ -50,13 +50,6 @@ namespace aosl
   {
     this->move_.set (x);
   }
-
-  inline
-  ::std::auto_ptr< Event::MoveType > Event::
-  detach_move ()
-  {
-    return this->move_.detach ();
-  }
 }
 
 // Begin epilogue.
