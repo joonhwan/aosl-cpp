@@ -24,10 +24,10 @@ namespace aoslcpp
 		@param sequence_id		Id of the sequence or empty if we should generate a unique id. 
 		@param first_stage_id	Id to use of the first stage or empty if we should generate a default first stage id.
 	**/
-	std::unique_ptr< aosl::Sequence > make_empty_sequence( const std::string& sequence_name
-														, const std::string& sequence_id = "" 
-														, const std::string& fist_stage_id = DEFAULT_FIRST_STAGE_NAME
-														);
+	aosl::Sequence make_empty_sequence(		const std::string& sequence_name
+										,	const std::string& sequence_id = "" 
+										,	const std::string& fist_stage_id = DEFAULT_FIRST_STAGE_NAME
+									);
 	
 }
 
