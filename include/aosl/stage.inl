@@ -164,13 +164,6 @@ namespace aosl
   {
     this->id_.set (x);
   }
-
-  inline
-  ::std::auto_ptr< Stage::IdType > Stage::
-  detach_id ()
-  {
-    return this->id_.detach ();
-  }
 }
 
 // Begin epilogue.

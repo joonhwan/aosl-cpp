@@ -385,17 +385,6 @@ namespace aosl
     void
     object (::std::auto_ptr< ObjectType > p);
 
-    /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< ObjectType >
-    detach_object ();
-
     //@}
 
     /**

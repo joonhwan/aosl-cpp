@@ -120,13 +120,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Move::FromType > Move::
-  detach_from ()
-  {
-    return this->from_.detach ();
-  }
-
-  inline
   const Move::ToType& Move::
   to () const
   {
@@ -155,13 +148,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Move::ToType > Move::
-  detach_to ()
-  {
-    return this->to_.detach ();
-  }
-
-  inline
   const Move::IdType& Move::
   id () const
   {
@@ -187,13 +173,6 @@ namespace aosl
   id (::std::auto_ptr< IdType > x)
   {
     this->id_.set (x);
-  }
-
-  inline
-  ::std::auto_ptr< Move::IdType > Move::
-  detach_id ()
-  {
-    return this->id_.detach ();
   }
 
   inline

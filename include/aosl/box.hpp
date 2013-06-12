@@ -84,11 +84,15 @@ namespace aosl
      * @name size
      *
      * @brief Accessor and modifier functions for the %size
-     * required element.
+     * optional element.
      *
      * Size of the box.
      * Each one of the axes value gives the length of the corresponding edges
      * of the box.
+     * If not provided, the default size should be determined by the
+     * implementation.
+     * In this case, if it is the ouput or input box of a graphic object, the
+     * default value is 100% of the resource size.
      */
     //@{
 
@@ -98,24 +102,30 @@ namespace aosl
     typedef ::aosl::Vector SizeType;
 
     /**
+     * @brief Element optional container type.
+     */
+    typedef ::xsd::cxx::tree::optional< SizeType > SizeOptional;
+
+    /**
      * @brief Element traits type.
      */
     typedef ::xsd::cxx::tree::traits< SizeType, char > SizeTraits;
 
     /**
-     * @brief Return a read-only (constant) reference to the element.
+     * @brief Return a read-only (constant) reference to the element
+     * container.
      *
-     * @return A constant reference to the element.
+     * @return A constant reference to the optional container.
      */
-    const SizeType&
+    const SizeOptional&
     size () const;
 
     /**
-     * @brief Return a read-write reference to the element.
+     * @brief Return a read-write reference to the element container.
      *
-     * @return A reference to the element.
+     * @return A reference to the optional container.
      */
-    SizeType&
+    SizeOptional&
     size ();
 
     /**
@@ -130,26 +140,27 @@ namespace aosl
     size (const SizeType& x);
 
     /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
+    void
+    size (const SizeOptional& x);
+
+    /**
      * @brief Set the element value without copying.
      *
      * @param p A new value to use.
      *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
+     * This function will try to use the passed value directly instead
+     * of making a copy.
      */
     void
     size (::std::auto_ptr< SizeType > p);
-
-    /**
-     * @brief Detach the element value from the object model.
-     *
-     * @return A pointer to the element value.
-     *
-     * Note that this function leaves the required element in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< SizeType >
-    detach_size ();
 
     //@}
 
@@ -157,7 +168,7 @@ namespace aosl
      * @name transformation
      *
      * @brief Accessor and modifier functions for the %transformation
-     * required element.
+     * optional element.
      *
      * Transformation defining the position, orientation and scale factor of
      * this box,
@@ -171,24 +182,30 @@ namespace aosl
     typedef ::aosl::Transformation TransformationType;
 
     /**
+     * @brief Element optional container type.
+     */
+    typedef ::xsd::cxx::tree::optional< TransformationType > TransformationOptional;
+
+    /**
      * @brief Element traits type.
      */
     typedef ::xsd::cxx::tree::traits< TransformationType, char > TransformationTraits;
 
     /**
-     * @brief Return a read-only (constant) reference to the element.
+     * @brief Return a read-only (constant) reference to the element
+     * container.
      *
-     * @return A constant reference to the element.
+     * @return A constant reference to the optional container.
      */
-    const TransformationType&
+    const TransformationOptional&
     transformation () const;
 
     /**
-     * @brief Return a read-write reference to the element.
+     * @brief Return a read-write reference to the element container.
      *
-     * @return A reference to the element.
+     * @return A reference to the optional container.
      */
-    TransformationType&
+    TransformationOptional&
     transformation ();
 
     /**
@@ -203,26 +220,27 @@ namespace aosl
     transformation (const TransformationType& x);
 
     /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
+    void
+    transformation (const TransformationOptional& x);
+
+    /**
      * @brief Set the element value without copying.
      *
      * @param p A new value to use.
      *
-     * This function will try to use the passed value directly
-     * instead of making a copy.
+     * This function will try to use the passed value directly instead
+     * of making a copy.
      */
     void
     transformation (::std::auto_ptr< TransformationType > p);
-
-    /**
-     * @brief Detach the element value from the object model.
-     *
-     * @return A pointer to the element value.
-     *
-     * Note that this function leaves the required element in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< TransformationType >
-    detach_transformation ();
 
     //@}
 
@@ -235,19 +253,7 @@ namespace aosl
      * @brief Create an instance from the ultimate base and
      * initializers for required elements and attributes.
      */
-    Box (const SizeType&,
-         const TransformationType&);
-
-    /**
-     * @brief Create an instance from the ultimate base and
-     * initializers for required elements and attributes
-     * (auto_ptr version).
-     *
-     * This constructor will try to use the passed values directly
-     * instead of making copies.
-     */
-    Box (::std::auto_ptr< SizeType >&,
-         ::std::auto_ptr< TransformationType >&);
+    Box ();
 
     /**
      * @brief Create an instance from a DOM element.
@@ -308,8 +314,8 @@ namespace aosl
            ::xml_schema::Flags);
 
     protected:
-    ::xsd::cxx::tree::one< SizeType > size_;
-    ::xsd::cxx::tree::one< TransformationType > transformation_;
+    SizeOptional size_;
+    TransformationOptional transformation_;
 
     //@endcond
   };

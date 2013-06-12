@@ -52,13 +52,6 @@ namespace aosl
   {
     this->source_.set (x);
   }
-
-  inline
-  ::std::auto_ptr< Event_signal::SourceType > Event_signal::
-  detach_source ()
-  {
-    return this->source_.detach ();
-  }
 }
 
 // Begin epilogue.

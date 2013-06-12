@@ -166,17 +166,6 @@ namespace aosl
     void
     area (::std::auto_ptr< AreaType > p);
 
-    /**
-     * @brief Detach the element value from the object model.
-     *
-     * @return A pointer to the element value.
-     *
-     * Note that this function leaves the required element in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< AreaType >
-    detach_area ();
-
     //@}
 
     /**
@@ -315,17 +304,6 @@ namespace aosl
     void
     objects (::std::auto_ptr< ObjectsType > p);
 
-    /**
-     * @brief Detach the element value from the object model.
-     *
-     * @return A pointer to the element value.
-     *
-     * Note that this function leaves the required element in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< ObjectsType >
-    detach_objects ();
-
     //@}
 
     /**
@@ -385,17 +363,6 @@ namespace aosl
      */
     void
     color (::std::auto_ptr< ColorType > p);
-
-    /**
-     * @brief Detach the attribute value from the object model.
-     *
-     * @return A pointer to the attribute value.
-     *
-     * Note that this function leaves the required attribute in 
-     * the original object model uninitialized.
-     */
-    ::std::auto_ptr< ColorType >
-    detach_color ();
 
     /**
      * @brief Return the default value for the attribute.

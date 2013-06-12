@@ -164,13 +164,6 @@ namespace aosl
   {
     this->object_.set (x);
   }
-
-  inline
-  ::std::auto_ptr< Change::ObjectType > Change::
-  detach_object ()
-  {
-    return this->object_.detach ();
-  }
 }
 
 // Begin epilogue.

@@ -52,13 +52,6 @@ namespace aosl
   {
     this->object_.set (x);
   }
-
-  inline
-  ::std::auto_ptr< Event_selection::ObjectType > Event_selection::
-  detach_object ()
-  {
-    return this->object_.detach ();
-  }
 }
 
 // Begin epilogue.

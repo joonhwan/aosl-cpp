@@ -52,13 +52,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Vector::XType > Vector::
-  detach_x ()
-  {
-    return this->x_.detach ();
-  }
-
-  inline
   Vector::XType Vector::
   x_default_value ()
   {
@@ -94,13 +87,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Vector::YType > Vector::
-  detach_y ()
-  {
-    return this->y_.detach ();
-  }
-
-  inline
   Vector::YType Vector::
   y_default_value ()
   {
@@ -133,13 +119,6 @@ namespace aosl
   z (::std::auto_ptr< ZType > x)
   {
     this->z_.set (x);
-  }
-
-  inline
-  ::std::auto_ptr< Vector::ZType > Vector::
-  detach_z ()
-  {
-    return this->z_.detach ();
   }
 
   inline

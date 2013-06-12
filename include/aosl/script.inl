@@ -58,13 +58,6 @@ namespace aosl
   }
 
   inline
-  ::std::auto_ptr< Script::LangType > Script::
-  detach_lang ()
-  {
-    return this->lang_.detach ();
-  }
-
-  inline
   const Script::ActivationType& Script::
   activation () const
   {
@@ -90,13 +83,6 @@ namespace aosl
   activation (::std::auto_ptr< ActivationType > x)
   {
     this->activation_.set (x);
-  }
-
-  inline
-  ::std::auto_ptr< Script::ActivationType > Script::
-  detach_activation ()
-  {
-    return this->activation_.detach ();
   }
 
   inline
@@ -160,13 +146,6 @@ namespace aosl
   interval (::std::auto_ptr< IntervalType > x)
   {
     this->interval_.set (x);
-  }
-
-  inline
-  ::std::auto_ptr< Script::IntervalType > Script::
-  detach_interval ()
-  {
-    return this->interval_.detach ();
   }
 
   inline
