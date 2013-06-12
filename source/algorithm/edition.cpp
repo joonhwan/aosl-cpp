@@ -11,7 +11,6 @@ namespace aoslcpp
 	const std::string DEFAULT_FIRST_STAGE_NAME( "stage_0" );
 
 	std::unique_ptr< aosl::Sequence > make_empty_sequence( const std::string& sequence_name
-														, const double canvas_width, const double canvas_height, const double canvas_depth
 														, const std::string& sequence_id
 														, const std::string& fist_stage_id
 														)
@@ -19,9 +18,9 @@ namespace aoslcpp
 		auto library = std::auto_ptr<aosl::Library>( new aosl::Library() );
 
 		auto area= std::auto_ptr<aosl::Spatial_area>( new aosl::Canvas::AreaType );
-		area->x( canvas_width );
-		area->y( canvas_height );
-		area->z( canvas_depth );
+		area->x( 1.0 );
+		area->y( 1.0 );
+		area->z( 1.0 );
 
 		auto objects= std::auto_ptr<aosl::Object_list>( new aosl::Canvas::ObjectsType );
 		auto canvas = std::auto_ptr<aosl::Canvas>( new aosl::Canvas( area, objects ) );
