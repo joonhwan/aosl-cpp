@@ -207,6 +207,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Object::IdType > Object::
+  detach_id ()
+  {
+    return this->id_.detach ();
+  }
+
+  inline
   const Object::ActiveType& Object::
   active () const
   {

@@ -50,6 +50,13 @@ namespace aosl
   {
     this->id_.set (x);
   }
+
+  inline
+  ::std::auto_ptr< Object_ref_element::IdType > Object_ref_element::
+  detach_id ()
+  {
+    return this->id_.detach ();
+  }
 }
 
 // Begin epilogue.

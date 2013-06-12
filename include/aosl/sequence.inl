@@ -99,6 +99,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Sequence::LibraryType > Sequence::
+  detach_library ()
+  {
+    return this->library_.detach ();
+  }
+
+  inline
   const Sequence::CanvasType& Sequence::
   canvas () const
   {
@@ -124,6 +131,13 @@ namespace aosl
   canvas (::std::auto_ptr< CanvasType > x)
   {
     this->canvas_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Sequence::CanvasType > Sequence::
+  detach_canvas ()
+  {
+    return this->canvas_.detach ();
   }
 
   inline
@@ -155,6 +169,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Sequence::StoryType > Sequence::
+  detach_story ()
+  {
+    return this->story_.detach ();
+  }
+
+  inline
   const Sequence::NameType& Sequence::
   name () const
   {
@@ -183,6 +204,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Sequence::NameType > Sequence::
+  detach_name ()
+  {
+    return this->name_.detach ();
+  }
+
+  inline
   const Sequence::IdType& Sequence::
   id () const
   {
@@ -208,6 +236,13 @@ namespace aosl
   id (::std::auto_ptr< IdType > x)
   {
     this->id_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Sequence::IdType > Sequence::
+  detach_id ()
+  {
+    return this->id_.detach ();
   }
 }
 

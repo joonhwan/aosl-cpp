@@ -49,6 +49,13 @@ namespace aosl
   {
     this->type_.set (x);
   }
+
+  inline
+  ::std::auto_ptr< Change_special::TypeType > Change_special::
+  detach_type ()
+  {
+    return this->type_.detach ();
+  }
 }
 
 // Begin epilogue.

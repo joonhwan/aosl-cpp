@@ -135,6 +135,17 @@ namespace aosl
     yaw (::std::auto_ptr< YawType > p);
 
     /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< YawType >
+    detach_yaw ();
+
+    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -203,6 +214,17 @@ namespace aosl
     pitch (::std::auto_ptr< PitchType > p);
 
     /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< PitchType >
+    detach_pitch ();
+
+    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -269,6 +291,17 @@ namespace aosl
      */
     void
     roll (::std::auto_ptr< RollType > p);
+
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< RollType >
+    detach_roll ();
 
     /**
      * @brief Return the default value for the attribute.

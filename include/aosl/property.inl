@@ -74,6 +74,13 @@ namespace aosl
   {
     this->name_.set (x);
   }
+
+  inline
+  ::std::auto_ptr< Property::NameType > Property::
+  detach_name ()
+  {
+    return this->name_.detach ();
+  }
 }
 
 // Begin epilogue.

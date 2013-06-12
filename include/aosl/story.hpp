@@ -313,6 +313,17 @@ namespace aosl
     void
     stages (::std::auto_ptr< StagesType > p);
 
+    /**
+     * @brief Detach the element value from the object model.
+     *
+     * @return A pointer to the element value.
+     *
+     * Note that this function leaves the required element in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< StagesType >
+    detach_stages ();
+
     //@}
 
     /**
@@ -372,6 +383,17 @@ namespace aosl
      */
     void
     moves (::std::auto_ptr< MovesType > p);
+
+    /**
+     * @brief Detach the element value from the object model.
+     *
+     * @return A pointer to the element value.
+     *
+     * Note that this function leaves the required element in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< MovesType >
+    detach_moves ();
 
     //@}
 
@@ -433,20 +455,23 @@ namespace aosl
     void
     begin (::std::auto_ptr< BeginType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< BeginType >
+    detach_begin ();
+
     //@}
 
     /**
      * @name Constructors
      */
     //@{
-
-    /**
-     * @brief Default constructor.
-     *
-     * Note that this constructor leaves required elements and
-     * attributes uninitialized.
-     */
-    Story ();
 
     /**
      * @brief Create an instance from the ultimate base and

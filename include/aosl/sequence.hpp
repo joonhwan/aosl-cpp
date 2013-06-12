@@ -230,6 +230,17 @@ namespace aosl
     void
     library (::std::auto_ptr< LibraryType > p);
 
+    /**
+     * @brief Detach the element value from the object model.
+     *
+     * @return A pointer to the element value.
+     *
+     * Note that this function leaves the required element in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< LibraryType >
+    detach_library ();
+
     //@}
 
     /**
@@ -291,6 +302,17 @@ namespace aosl
     void
     canvas (::std::auto_ptr< CanvasType > p);
 
+    /**
+     * @brief Detach the element value from the object model.
+     *
+     * @return A pointer to the element value.
+     *
+     * Note that this function leaves the required element in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< CanvasType >
+    detach_canvas ();
+
     //@}
 
     /**
@@ -350,6 +372,17 @@ namespace aosl
      */
     void
     story (::std::auto_ptr< StoryType > p);
+
+    /**
+     * @brief Detach the element value from the object model.
+     *
+     * @return A pointer to the element value.
+     *
+     * Note that this function leaves the required element in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< StoryType >
+    detach_story ();
 
     //@}
 
@@ -412,6 +445,17 @@ namespace aosl
     void
     name (::std::auto_ptr< NameType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< NameType >
+    detach_name ();
+
     //@}
 
     /**
@@ -473,20 +517,23 @@ namespace aosl
     void
     id (::std::auto_ptr< IdType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< IdType >
+    detach_id ();
+
     //@}
 
     /**
      * @name Constructors
      */
     //@{
-
-    /**
-     * @brief Default constructor.
-     *
-     * Note that this constructor leaves required elements and
-     * attributes uninitialized.
-     */
-    Sequence ();
 
     /**
      * @brief Create an instance from the ultimate base and

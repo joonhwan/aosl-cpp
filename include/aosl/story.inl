@@ -134,6 +134,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Story::StagesType > Story::
+  detach_stages ()
+  {
+    return this->stages_.detach ();
+  }
+
+  inline
   const Story::MovesType& Story::
   moves () const
   {
@@ -162,6 +169,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Story::MovesType > Story::
+  detach_moves ()
+  {
+    return this->moves_.detach ();
+  }
+
+  inline
   const Story::BeginType& Story::
   begin () const
   {
@@ -187,6 +201,13 @@ namespace aosl
   begin (::std::auto_ptr< BeginType > x)
   {
     this->begin_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Story::BeginType > Story::
+  detach_begin ()
+  {
+    return this->begin_.detach ();
   }
 }
 

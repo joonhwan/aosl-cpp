@@ -143,20 +143,23 @@ namespace aosl
     void
     source (::std::auto_ptr< SourceType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< SourceType >
+    detach_source ();
+
     //@}
 
     /**
      * @name Constructors
      */
     //@{
-
-    /**
-     * @brief Default constructor.
-     *
-     * Note that this constructor leaves required elements and
-     * attributes uninitialized.
-     */
-    Event_signal ();
 
     /**
      * @brief Create an instance from the ultimate base and

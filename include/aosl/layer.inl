@@ -114,6 +114,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Layer::IdType > Layer::
+  detach_id ()
+  {
+    return this->id_.detach ();
+  }
+
+  inline
   const Layer::ActiveType& Layer::
   active () const
   {

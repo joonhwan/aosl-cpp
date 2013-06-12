@@ -22,13 +22,6 @@ namespace aosl
 
   inline
   Color::
-  Color ()
-  : ::xml_schema::String ()
-  {
-  }
-
-  inline
-  Color::
   Color (const char* s)
   : ::xml_schema::String (s)
   {

@@ -27,17 +27,17 @@ namespace aosl
   // 
 
   inline
-  const Box::SizeOptional& Box::
+  const Box::SizeType& Box::
   size () const
   {
-    return this->size_;
+    return this->size_.get ();
   }
 
   inline
-  Box::SizeOptional& Box::
+  Box::SizeType& Box::
   size ()
   {
-    return this->size_;
+    return this->size_.get ();
   }
 
   inline
@@ -49,30 +49,30 @@ namespace aosl
 
   inline
   void Box::
-  size (const SizeOptional& x)
-  {
-    this->size_ = x;
-  }
-
-  inline
-  void Box::
   size (::std::auto_ptr< SizeType > x)
   {
     this->size_.set (x);
   }
 
   inline
-  const Box::TransformationOptional& Box::
-  transformation () const
+  ::std::auto_ptr< Box::SizeType > Box::
+  detach_size ()
   {
-    return this->transformation_;
+    return this->size_.detach ();
   }
 
   inline
-  Box::TransformationOptional& Box::
+  const Box::TransformationType& Box::
+  transformation () const
+  {
+    return this->transformation_.get ();
+  }
+
+  inline
+  Box::TransformationType& Box::
   transformation ()
   {
-    return this->transformation_;
+    return this->transformation_.get ();
   }
 
   inline
@@ -84,16 +84,16 @@ namespace aosl
 
   inline
   void Box::
-  transformation (const TransformationOptional& x)
-  {
-    this->transformation_ = x;
-  }
-
-  inline
-  void Box::
   transformation (::std::auto_ptr< TransformationType > x)
   {
     this->transformation_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Box::TransformationType > Box::
+  detach_transformation ()
+  {
+    return this->transformation_.detach ();
   }
 }
 

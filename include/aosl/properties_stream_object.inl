@@ -61,6 +61,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Properties_stream_object::BeginType > Properties_stream_object::
+  detach_begin ()
+  {
+    return this->begin_.detach ();
+  }
+
+  inline
   const Properties_stream_object::BeginType& Properties_stream_object::
   begin_default_value ()
   {
@@ -93,6 +100,13 @@ namespace aosl
   end (::std::auto_ptr< EndType > x)
   {
     this->end_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Properties_stream_object::EndType > Properties_stream_object::
+  detach_end ()
+  {
+    return this->end_.detach ();
   }
 
   inline
@@ -159,6 +173,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Properties_stream_object::IntervalType > Properties_stream_object::
+  detach_interval ()
+  {
+    return this->interval_.detach ();
+  }
+
+  inline
   Properties_stream_object::IntervalType Properties_stream_object::
   interval_default_value ()
   {
@@ -194,6 +215,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Properties_stream_object::ControllerType > Properties_stream_object::
+  detach_controller ()
+  {
+    return this->controller_.detach ();
+  }
+
+  inline
   const Properties_stream_object::ControllerType& Properties_stream_object::
   controller_default_value ()
   {
@@ -226,6 +254,13 @@ namespace aosl
   activation (::std::auto_ptr< ActivationType > x)
   {
     this->activation_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Properties_stream_object::ActivationType > Properties_stream_object::
+  detach_activation ()
+  {
+    return this->activation_.detach ();
   }
 
   inline

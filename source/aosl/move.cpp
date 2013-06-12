@@ -44,18 +44,6 @@ namespace aosl
   //
 
   Move::
-  Move ()
-  : ::xml_schema::Type (),
-    change_ (::xml_schema::Flags (), this),
-    extension_ (::xml_schema::Flags (), this),
-    from_ (::xml_schema::Flags (), this),
-    to_ (::xml_schema::Flags (), this),
-    id_ (::xml_schema::Flags (), this),
-    default__ (default_default_value (), ::xml_schema::Flags (), this)
-  {
-  }
-
-  Move::
   Move (const FromType& from,
         const ToType& to,
         const IdType& id)

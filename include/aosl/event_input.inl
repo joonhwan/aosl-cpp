@@ -57,6 +57,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Event_input::KeyType > Event_input::
+  detach_key ()
+  {
+    return this->key_.detach ();
+  }
+
+  inline
   const Event_input::ValueType& Event_input::
   value () const
   {
@@ -82,6 +89,13 @@ namespace aosl
   value (::std::auto_ptr< ValueType > x)
   {
     this->value_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Event_input::ValueType > Event_input::
+  detach_value ()
+  {
+    return this->value_.detach ();
   }
 }
 

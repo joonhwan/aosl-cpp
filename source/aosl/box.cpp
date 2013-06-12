@@ -44,10 +44,20 @@ namespace aosl
   //
 
   Box::
-  Box ()
+  Box (const SizeType& size,
+       const TransformationType& transformation)
   : ::xml_schema::Type (),
-    size_ (::xml_schema::Flags (), this),
-    transformation_ (::xml_schema::Flags (), this)
+    size_ (size, ::xml_schema::Flags (), this),
+    transformation_ (transformation, ::xml_schema::Flags (), this)
+  {
+  }
+
+  Box::
+  Box (::std::auto_ptr< SizeType >& size,
+       ::std::auto_ptr< TransformationType >& transformation)
+  : ::xml_schema::Type (),
+    size_ (size, ::xml_schema::Flags (), this),
+    transformation_ (transformation, ::xml_schema::Flags (), this)
   {
   }
 
@@ -93,7 +103,7 @@ namespace aosl
         ::std::auto_ptr< SizeType > r (
           SizeTraits::create (i, f, this));
 
-        if (!this->size_)
+        if (!size_.present ())
         {
           this->size_.set (r);
           continue;
@@ -107,7 +117,7 @@ namespace aosl
         ::std::auto_ptr< TransformationType > r (
           TransformationTraits::create (i, f, this));
 
-        if (!this->transformation_)
+        if (!transformation_.present ())
         {
           this->transformation_.set (r);
           continue;
@@ -115,6 +125,20 @@ namespace aosl
       }
 
       break;
+    }
+
+    if (!size_.present ())
+    {
+      throw ::xsd::cxx::tree::expected_element< char > (
+        "size",
+        "artofsequence.org/aosl/1.0");
+    }
+
+    if (!transformation_.present ())
+    {
+      throw ::xsd::cxx::tree::expected_element< char > (
+        "transformation",
+        "artofsequence.org/aosl/1.0");
     }
   }
 
@@ -165,16 +189,8 @@ namespace aosl
   ::std::ostream&
   operator<< (::std::ostream& o, const Box& i)
   {
-    if (i.size ())
-    {
-      o << ::std::endl << "size: " << *i.size ();
-    }
-
-    if (i.transformation ())
-    {
-      o << ::std::endl << "transformation: " << *i.transformation ();
-    }
-
+    o << ::std::endl << "size: " << i.size ();
+    o << ::std::endl << "transformation: " << i.transformation ();
     return o;
   }
 }
@@ -209,7 +225,6 @@ namespace aosl
 
     // size
     //
-    if (i.size ())
     {
       ::xercesc::DOMElement& s (
         ::xsd::cxx::xml::dom::create_element (
@@ -217,12 +232,11 @@ namespace aosl
           "artofsequence.org/aosl/1.0",
           e));
 
-      s << *i.size ();
+      s << i.size ();
     }
 
     // transformation
     //
-    if (i.transformation ())
     {
       ::xercesc::DOMElement& s (
         ::xsd::cxx::xml::dom::create_element (
@@ -230,7 +244,7 @@ namespace aosl
           "artofsequence.org/aosl/1.0",
           e));
 
-      s << *i.transformation ();
+      s << i.transformation ();
     }
   }
 }

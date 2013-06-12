@@ -22,13 +22,6 @@ namespace aosl
 
   inline
   Special_color::
-  Special_color ()
-  : ::xml_schema::String ()
-  {
-  }
-
-  inline
-  Special_color::
   Special_color (Value v)
   : ::xml_schema::String (_xsd_Special_color_literals_[v])
   {

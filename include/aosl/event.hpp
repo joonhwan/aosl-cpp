@@ -137,20 +137,23 @@ namespace aosl
     void
     move (::std::auto_ptr< MoveType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< MoveType >
+    detach_move ();
+
     //@}
 
     /**
      * @name Constructors
      */
     //@{
-
-    /**
-     * @brief Default constructor.
-     *
-     * Note that this constructor leaves required elements and
-     * attributes uninitialized.
-     */
-    Event ();
 
     /**
      * @brief Create an instance from the ultimate base and

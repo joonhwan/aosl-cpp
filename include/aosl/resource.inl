@@ -57,6 +57,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Resource::IdType > Resource::
+  detach_id ()
+  {
+    return this->id_.detach ();
+  }
+
+  inline
   const Resource::TypeType& Resource::
   type () const
   {
@@ -82,6 +89,13 @@ namespace aosl
   type (::std::auto_ptr< TypeType > x)
   {
     this->type_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Resource::TypeType > Resource::
+  detach_type ()
+  {
+    return this->type_.detach ();
   }
 }
 

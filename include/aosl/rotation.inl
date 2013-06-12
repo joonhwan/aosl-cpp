@@ -52,6 +52,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Rotation::YawType > Rotation::
+  detach_yaw ()
+  {
+    return this->yaw_.detach ();
+  }
+
+  inline
   Rotation::YawType Rotation::
   yaw_default_value ()
   {
@@ -87,6 +94,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Rotation::PitchType > Rotation::
+  detach_pitch ()
+  {
+    return this->pitch_.detach ();
+  }
+
+  inline
   Rotation::PitchType Rotation::
   pitch_default_value ()
   {
@@ -119,6 +133,13 @@ namespace aosl
   roll (::std::auto_ptr< RollType > x)
   {
     this->roll_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Rotation::RollType > Rotation::
+  detach_roll ()
+  {
+    return this->roll_.detach ();
   }
 
   inline

@@ -148,6 +148,17 @@ namespace aosl
     begin (::std::auto_ptr< BeginType > p);
 
     /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< BeginType >
+    detach_begin ();
+
+    /**
      * @brief Return the default value for the attribute.
      *
      * @return A read-only (constant) reference to the attribute's
@@ -215,6 +226,17 @@ namespace aosl
      */
     void
     end (::std::auto_ptr< EndType > p);
+
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< EndType >
+    detach_end ();
 
     /**
      * @brief Return the default value for the attribute.
@@ -347,6 +369,17 @@ namespace aosl
     interval (::std::auto_ptr< IntervalType > p);
 
     /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< IntervalType >
+    detach_interval ();
+
+    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -414,6 +447,17 @@ namespace aosl
      */
     void
     controller (::std::auto_ptr< ControllerType > p);
+
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< ControllerType >
+    detach_controller ();
 
     /**
      * @brief Return the default value for the attribute.
@@ -484,6 +528,17 @@ namespace aosl
      */
     void
     activation (::std::auto_ptr< ActivationType > p);
+
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< ActivationType >
+    detach_activation ();
 
     /**
      * @brief Return the default value for the attribute.

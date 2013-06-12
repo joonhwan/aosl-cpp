@@ -22,13 +22,6 @@ namespace aosl
 
   inline
   Special_stage_ref::
-  Special_stage_ref ()
-  : ::xml_schema::String ()
-  {
-  }
-
-  inline
-  Special_stage_ref::
   Special_stage_ref (Value v)
   : ::xml_schema::String (_xsd_Special_stage_ref_literals_[v])
   {

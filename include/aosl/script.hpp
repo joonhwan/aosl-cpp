@@ -151,6 +151,17 @@ namespace aosl
     void
     lang (::std::auto_ptr< LangType > p);
 
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< LangType >
+    detach_lang ();
+
     //@}
 
     /**
@@ -215,6 +226,17 @@ namespace aosl
      */
     void
     activation (::std::auto_ptr< ActivationType > p);
+
+    /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< ActivationType >
+    detach_activation ();
 
     /**
      * @brief Return the default value for the attribute.
@@ -352,6 +374,17 @@ namespace aosl
     interval (::std::auto_ptr< IntervalType > p);
 
     /**
+     * @brief Detach the attribute value from the object model.
+     *
+     * @return A pointer to the attribute value.
+     *
+     * Note that this function leaves the required attribute in 
+     * the original object model uninitialized.
+     */
+    ::std::auto_ptr< IntervalType >
+    detach_interval ();
+
+    /**
      * @brief Return the default value for the attribute.
      *
      * @return The attribute's default value.
@@ -448,14 +481,6 @@ namespace aosl
      * @name Constructors
      */
     //@{
-
-    /**
-     * @brief Default constructor.
-     *
-     * Note that this constructor leaves required elements and
-     * attributes uninitialized.
-     */
-    Script ();
 
     /**
      * @brief Create an instance from the ultimate base and

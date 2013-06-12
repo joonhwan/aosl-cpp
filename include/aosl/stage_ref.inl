@@ -22,13 +22,6 @@ namespace aosl
 
   inline
   Stage_ref::
-  Stage_ref ()
-  : ::xml_schema::String ()
-  {
-  }
-
-  inline
-  Stage_ref::
   Stage_ref (const char* s)
   : ::xml_schema::String (s)
   {

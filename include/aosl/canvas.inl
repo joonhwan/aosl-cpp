@@ -61,6 +61,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Canvas::AreaType > Canvas::
+  detach_area ()
+  {
+    return this->area_.detach ();
+  }
+
+  inline
   const Canvas::LayersOptional& Canvas::
   layers () const
   {
@@ -124,6 +131,13 @@ namespace aosl
   }
 
   inline
+  ::std::auto_ptr< Canvas::ObjectsType > Canvas::
+  detach_objects ()
+  {
+    return this->objects_.detach ();
+  }
+
+  inline
   const Canvas::ColorType& Canvas::
   color () const
   {
@@ -149,6 +163,13 @@ namespace aosl
   color (::std::auto_ptr< ColorType > x)
   {
     this->color_.set (x);
+  }
+
+  inline
+  ::std::auto_ptr< Canvas::ColorType > Canvas::
+  detach_color ()
+  {
+    return this->color_.detach ();
   }
 
   inline
